@@ -8,6 +8,7 @@ It is a combination of Network Port Scanner and Honeypot.
 [![ligne-gif-discord-line.gif](https://i.postimg.cc/NFcy3t7v/ligne-gif-discord-line.gif)](https://postimg.cc/tZBC6LMB)
 ## Available And Tested On:
 * Windows
+* Linux (coming soon)
  
 [![ligne-gif-discord-line.gif](https://i.postimg.cc/NFcy3t7v/ligne-gif-discord-line.gif)](https://postimg.cc/tZBC6LMB)
 
@@ -17,7 +18,10 @@ It is a combination of Network Port Scanner and Honeypot.
 * [+] Updated maintainence !
 * [+] Easy for Beginners !
 
-
+## How to use :
+* git clone https://github.com/EFFLUX110/garuda.git
+* cd garuda
+* python3 garuda.py
 
 [![ligne-gif-discord-line.gif](https://i.postimg.cc/NFcy3t7v/ligne-gif-discord-line.gif)](https://postimg.cc/tZBC6LMB)
 
