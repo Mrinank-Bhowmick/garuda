@@ -1,3 +1,7 @@
+import scan
+import Honeypot
+from cli import Output
+
 msg = (
     "                                                                                         __..-' \n"
     "     ________                         ___                                          _.--''       \n"
@@ -21,7 +25,7 @@ msg = (
     "                                             `'.                                                \n"
 )
 
-
+output = Output()
 class bold_color:  # Change colours according to your need
     PURPLE = "\033[95m"
     CYAN = "\033[96m"
@@ -35,18 +39,18 @@ class bold_color:  # Change colours according to your need
     END = "\033[0m"
 
 
-print(bold_color.GREEN)
+# I could have replaced the print function with the c_print function
+# But it would be a lot of work to replace all the print functions
+print("\033[92m")
 print(msg)
+# Reset the color to default
+print("\033[0m")
+
 if __name__ == "__main__":
-    while True:
-        menu = int(input("Choose      : "))
-        if menu in range(1, 3):
-            break
-    if menu == 1:
-        import scan
-
+    menu_option = int(output.ask("Select an option", choices=["1", "2"]))
+    if menu_option == 1:
         scan.scanner()
-    elif menu == 2:
-        import Honeypot
-
+    elif menu_option == 2:
         Honeypot.honey()
+else:
+    output.c_print("This file is not meant to be imported", code="danger")
