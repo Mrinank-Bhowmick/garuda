@@ -26,6 +26,8 @@ msg = (
 )
 
 output = Output()
+
+
 class bold_color:  # Change colours according to your need
     PURPLE = "\033[95m"
     CYAN = "\033[96m"

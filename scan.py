@@ -10,14 +10,18 @@ k = 0
 output = Output()
 # Initialize a ports list to store all the open ports
 # Add a table to display the open ports
-table = Table(title="Open Ports", show_header=True,
-              header_style="bold magenta")
+table = Table(title="Open Ports", show_header=True, header_style="bold magenta")
 table.add_column("Port", style="cyan", justify="center")
 table.add_column("Service", style="green", justify="center")
 table.add_column("URL", style="yellow", justify="center")
 
+
 def scanner():
-    output.show_panel(title="", content="[green]EFFLUX[/green] Eagle [underline]port scanner[/underline]", color="green")
+    output.show_panel(
+        title="",
+        content="[green]EFFLUX[/green] Eagle [underline]port scanner[/underline]",
+        color="green",
+    )
     try:
         tar = output.ask("Enter an IP Address", color="green")
         output.log("Trying to resolve host name")
@@ -48,17 +52,22 @@ def scanner():
                     table.add_row(str(port), serviceName, f"http://{target}:{port}")
                     k += 1
             except:
-                k+=1
+                k += 1
                 output.c_print(f"Error at {port}, skipping")
         if port == end_port:
             if k != 0:
-                output.c_print(f"Eagle Scanning was [green]successful[/green], [underline]{k} Ports[/underline] are open")
+                output.c_print(
+                    f"Eagle Scanning was [green]successful[/green], [underline]{k} Ports[/underline] are open"
+                )
                 print("\n")
                 output.c_print(table)
                 print("\n")
             elif k == 0:
                 output.c_print(f"Unfortunately [red]no ports[/red] were open :(")
-            output.c_print(f"Time taken: [underline]{ str(time.time() - startTime)[:4] }[/underline] sec", code="info")
+            output.c_print(
+                f"Time taken: [underline]{ str(time.time() - startTime)[:4] }[/underline] sec",
+                code="info",
+            )
             output.c_print("Thanks for using 🦅[blue]EFFLUX[/blue]")
 
         p.close()

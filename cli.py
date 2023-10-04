@@ -33,7 +33,7 @@ class Output:
 
     def colored_text(self, text: str, color: str) -> Text:
         return Text(text, style=color)
-    
+
     def log(self, text: str) -> None:
         self.console.log(text)
 
